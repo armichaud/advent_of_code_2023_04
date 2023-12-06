@@ -25,7 +25,6 @@ fn get_cards(path: &str ) -> Vec<Card> {
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
     contents.lines().for_each(|line| {
-        // split around colon
         let mut card = line.split(":");
         let card_id = card
             .next()
@@ -37,9 +36,7 @@ fn get_cards(path: &str ) -> Vec<Card> {
             .unwrap()
             .parse::<i32>()
             .unwrap();
-        // split the second part around |
         let mut numbers = card.next().unwrap().split("|");
-        // convert first item in numbers to list of numbers
         let winning_numbers: Vec<i32> = numbers
             .next()
             .unwrap()
@@ -47,7 +44,6 @@ fn get_cards(path: &str ) -> Vec<Card> {
             .filter(|&x| !x.is_empty())
             .map(|x| x.parse::<i32>().unwrap())
             .collect();
-        // convert second item in numbers to list of numbers
         let lottery_numbers: Vec<i32> = numbers
             .next()
             .unwrap()
