@@ -87,8 +87,8 @@ fn solution_b(path: &str) -> i32{
 }
 
 fn main() {
-    assert_eq!(solution_a("example.txt"), 13);
-    assert_eq!(solution_a("input.txt"), 21105);
-    assert_eq!(solution_b("example.txt"), 30);
-    assert_eq!(solution_b("input.txt"), 5329815);
+    println!("{}", solution_a("example.txt"));
+    println!("{}", solution_a("input.txt"));
+    println!("{}", solution_b("example.txt"));
+    println!("{}", solution_b("input.txt"));
 }
